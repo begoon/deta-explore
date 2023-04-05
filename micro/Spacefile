@@ -1,0 +1,10 @@
+# Spacefile Docs: https://go.deta.dev/docs/spacefile/v0
+v: 0
+app_name: inside
+micros:
+  - name: exe
+    src: ./
+    engine: custom
+    run: ./exe
+    public_routes:
+      - "/*"

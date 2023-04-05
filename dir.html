@@ -1,0 +1,20 @@
+{{define "content"}}
+<table class="w-full">
+  {{ if .Parent -}}
+  <tr>
+    <td>📂</td>
+    <td colspan="5"><a href="{{.Parent}}">..</a> <a href="?tar=1" class="ml-1">⇩</a></td>
+  </tr>
+  {{- end }}
+  {{ range $i, $f := .Files -}}
+  <tr>
+    <td>{{if $f.IsDir -}}📂{{else}}<a href="{{$f.URL}}?view=1">👁️</a>{{end}}</td>
+    <td><a href="{{$f.URL}}">{{$f.Name}}</a></td>
+    <td class="px-2 max-sm:hidden">{{$f.Date}}</td>
+    <td class="px-2 max-sm:hidden">{{$f.Time}}</td>
+    <td class=" px-2 text-right">{{$f.Size}}</td>
+    <td class="px-2 max-sm:hidden font-mono text-xs whitespace-nowrap">{{- $f.Mode}}</td>
+  </tr>
+  {{ end }}
+</table>
+{{end}}

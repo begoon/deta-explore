@@ -1,0 +1,22 @@
+{{define "content"}}
+<div class="mb-4">
+    <fieldset class="border">
+        {{ if .Error }}
+        <legend class="text-white bg-red-600 px-1">Error</legend>
+        {{ else }}
+        <legend class="bg-slate-200 px-1">Output</legend>
+        {{ end }}
+        <pre class="p-2">{{ .Output }}</pre>
+    </fieldset>
+</div>
+<form method="post">
+    <label>
+        <textarea name="code" class="w-full" rows="26" placeholder="Commands or shell script to run...">
+            {{- html .Code -}}
+        </textarea>
+    </label>
+    <button name="shell" value="1" type="submit" class="p-2 my-3 border rounded bg-slate-200 max-sm:w-full">
+        Run
+    </button>
+</form>
+{{end}}
