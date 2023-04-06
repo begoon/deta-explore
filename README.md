@@ -42,7 +42,7 @@ Click on `Run` in the top menu, then type one or command in the input field and 
 
 For example:
 
-![image](https://user-images.githubusercontent.com/84461/230234410-753c9f5f-9380-449a-acaa-85142cbbfdde.png)
+![image](https://user-images.githubusercontent.com/84461/230240215-fa31d4d6-708c-4589-b97f-1aeb45c17b6f.png)
 
 ## How to deploy the app
 
@@ -88,7 +88,9 @@ the sources to Deta instead, and then build the executable in Deta. The current
 
 After the push, CLI will give you the URL of your app, which you can just click on.
 
-NOTE: In the `Spacefile`, ALL public route as disabled via `public_routes` to be `/none` ("none"
+**NOTE**
+
+In the `Spacefile`, ALL public routes are disabled via `public_routes` to be `/none` ("none"
 is just an arbitary nonexistent path). Be careful making your deployment public. The environment
 variables viewer may expose your deta project key and the api key.
 
